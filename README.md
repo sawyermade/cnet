@@ -20,6 +20,9 @@ Get ConceptNet assertions and NumberBatch embeddings, test, and pickle:
 python3 get_data.py
 ```
 
+## Epic Kitchens Verb & Noun Paths
+
+
 ## How to use ```conceptnet.py```
 
 Import class and load assertions+embeddings:

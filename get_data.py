@@ -131,7 +131,7 @@ def get_numberbatch():
 	numberbatch_filename_zipped = os.path.join('data', numberbatch_url.split('/')[-1])
 	numberbatch_filename_zipped_hash = '90e57611eb71077ada9fd0b011fd0206de8ec13d035aced40b81b1a4d549c6a2'
 
-	numberbatch_filename = os.path.join('data', numberbatch_filename_zipped[:-3])
+	numberbatch_filename = numberbatch_filename_zipped[:-3]
 	numberbatch_filename_hash = '42f92fcd49a63baf4d643bde39c996079432b383077afddebac20c2844c9a6f7'
 
 	print('Retrieving NumberBatch...')
@@ -182,23 +182,26 @@ def main():
 	numberbatch_filename = get_numberbatch()
 
 	# Load conceptnet and test it
+	print('Testing ConceptNet...\n')
 	cnet = ConceptNet()
-	print(cnet.get_embedding('headset'))
+	
+	print(cnet.get_embedding('headset'), '\n')
 
-	print(cnet.query_concept('headset'))
+	print(cnet.query_concept('headset'), '\n')
 
-	print(cnet.query_concept('headset', directed=True))
+	print(cnet.query_concept('headset', directed=True), '\n')
 
-	print(cnet.query_edge('hand', 'arm'))
+	print(cnet.query_edge('hand', 'arm'), '\n')
 
-	print(cnet.query_edge('hand', 'arm', directed=True))
+	print(cnet.query_edge('hand', 'arm', directed=True), '\n')
 
-	print(cnet.query_edge('arm', 'hand', directed=True))
+	print(cnet.query_edge('arm', 'hand', directed=True), '\n')
 
 	# Pickle Concept Net for faster loading
 	pickle_path = 'data/cnet.pkl'
 	with open(pickle_path, 'wb') as fp:
 		pickle.dump(cnet, fp)
+	print(f'ConceptNet Pickle Saved: {pickle_path}\n')
 
 if __name__ == '__main__':
 	main()
