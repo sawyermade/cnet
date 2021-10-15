@@ -8,7 +8,7 @@ from tqdm import tqdm
 # ConceptNet & NumberBatch query tools
 class ConceptNet:
 	# constructor
-	def __init__(self, conceptnet_filename='conceptnet-en-5.7.0.txt', numberbatch_filename='numberbatch-en-19.08.txt', remove_duplicate=False, remove_dangling=True):
+	def __init__(self, conceptnet_filename='data/conceptnet-en-5.7.0.txt', numberbatch_filename='data/numberbatch-en-19.08.txt', remove_duplicate=False, remove_dangling=True):
 		self.valid_assertions = set([
 			'RelatedTo', 'FormOf', 'PartOf', 'HasA', 'UsedFor', 'CapableOf', 'AtLocation', 'Causes', 'HasSubevent',
 			'HasFirstSubevent', 'HasLastSubevent', 'HasPrerequisite', 'HasProperty', 'MotivatedByGoal',

@@ -1,18 +1,23 @@
-# conceptnet-pytools
+# ConceptNet Python
 Python tools to query ConceptNet assertions and NumberBatch embeddings.
 
 ## Setup
 
-Get ConceptNet assertions and NumberBatch embeddings:
+Clone repo and enter directory:
+```
+git clone git@github.com:sawyermade/cnet.git; cd cnet
+```
+
+Install Anaconda Environment
+```
+conda env create -f environment.yml
+conda activate cnet
+```
+
+Get ConceptNet assertions and NumberBatch embeddings, test, and pickle:
 
 ```
-$ python3 get_data.py
-```
-
-Check if everything is working:
-
-```
-$ python3 test.py
+python3 get_data.py
 ```
 
 ## How to use ```conceptnet.py```
