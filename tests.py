@@ -45,45 +45,45 @@ def main():
 
 	# print(cnet.query_concept('water'))
 	# print(cnet.outbonds['water'])
-	w = cnet.query_concept('water')
-	print(w.keys())
-	i = w['in']
-	o = w['out']
-	print(type(i), type(o))
-	ob = cnet.outbonds['water']
-	print(ob)
+	# w = cnet.query_concept('water')
+	# print(w.keys())
+	# i = w['in']
+	# o = w['out']
+	# print(type(i), type(o))
+	# ob = cnet.outbonds['water']
+	# print(ob)
 
 	### BFS ###
-	# # Noun to verb paths
-	# print('Starting noun to verb path outbonds...')
-	# noun_to_verb = OrderedDict()
-	# for noun in tqdm(noun_list[:10]):
-	# 	noun_to_verb[noun] = OrderedDict()
-	# 	for verb in verb_list[:10]:
-	# 		path = cnet.bfs_outbonds(noun, verb)
-	# 		noun_to_verb[noun][verb] = path
+	# Noun to verb paths
+	print('Starting noun to verb path outbonds...')
+	noun_to_verb = OrderedDict()
+	for noun in tqdm(noun_list[:10]):
+		noun_to_verb[noun] = OrderedDict()
+		for verb in verb_list[:10]:
+			path = cnet.bfs_outbonds(noun, verb)
+			noun_to_verb[noun][verb] = path
 
-	# # Saves noun to verb path outbonds
-	# out_file = 'noun_to_verb-outbonds.json'
-	# print(f'Saving file: {out_file}\n')
-	# with open(out_file, 'w') as fp:
-	# 	json.dump(noun_to_verb, fp, indent=3)
+	# Saves noun to verb path outbonds
+	out_file = 'noun_to_verb-outbonds.json'
+	print(f'Saving file: {out_file}\n')
+	with open(out_file, 'w') as fp:
+		json.dump(noun_to_verb, fp, indent=3)
 
 
-	# # Verb to noun paths
-	# print('Starting verb to noun path outbonds...')
-	# verb_to_noun = OrderedDict()
-	# for verb in tqdm(verb_list):
-	# 	verb_to_noun[verb] = OrderedDict()
-	# 	for noun in noun_list:
-	# 		path = cnet.bfs_outbonds(verb, noun)
-	# 		verb_to_noun[verb][noun] = path
+	# Verb to noun paths
+	print('Starting verb to noun path outbonds...')
+	verb_to_noun = OrderedDict()
+	for verb in tqdm(verb_list):
+		verb_to_noun[verb] = OrderedDict()
+		for noun in noun_list:
+			path = cnet.bfs_outbonds(verb, noun)
+			verb_to_noun[verb][noun] = path
 
-	# # Saves verb to noun path outbonds
-	# out_file = 'verb_to_noun-outbonds.json'
-	# print(f'Saving file: {out_file}\n')
-	# with open(out_file, 'w') as fp:
-	# 	json.dump(verb_to_noun, fp, indent=3)
+	# Saves verb to noun path outbonds
+	out_file = 'verb_to_noun-outbonds.json'
+	print(f'Saving file: {out_file}\n')
+	with open(out_file, 'w') as fp:
+		json.dump(verb_to_noun, fp, indent=3)
 
 	### Number Batch ###
 	# print('Getting Noun numberbatch embeddings...')
