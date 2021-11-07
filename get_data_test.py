@@ -198,7 +198,11 @@ def main():
 	print(cnet.query_edge('arm', 'hand', directed=True), '\n')
 
 	# Pickle Concept Net for faster loading
-	pickle_path = 'data/cnet.pkl'
+	pickle_dir = 'data'
+	pickle_fname = 'cnet.pkl'
+	pickle_path = os.path.join(pickle_dir, pickle_fname)
+	if not os.path.exists(pickle_dir):
+		os.makedirs(pickle_dir)
 	with open(pickle_path, 'wb') as fp:
 		pickle.dump(cnet, fp)
 	print(f'ConceptNet Pickle Saved: {pickle_path}\n')
